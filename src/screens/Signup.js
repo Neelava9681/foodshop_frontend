@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 import "../screens/Signup.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -16,6 +17,8 @@ export default function Signup() {
     password: "",
     location: "",
   });
+
+  const Navigate = useNavigate()
 
   // useEffect(() => {
   //   console.log(credentials);
@@ -69,8 +72,10 @@ const handleSubmit = async (e) => {
 
         if (!response.data.success) {
             alert("Enter valid credentials");
+
         } else {
             console.log(response.data);
+            Navigate("/login")
             
         }
     } catch (error) {
