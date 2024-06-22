@@ -54,7 +54,7 @@ const handleSubmit = async (e) => {
     try {
         e.preventDefault();
 
-        const response = await axios.post("http://localhost:5001/api/createuser", {
+        const response = await axios.post("https://food-shop-2.onrender.com/api/createuser", {
             name: credentials.name,
             email: credentials.email,
             password: credentials.password,
